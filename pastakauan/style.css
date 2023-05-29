@@ -1,0 +1,318 @@
+
+
+/* Estilos básicos */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 130px;
+    border-radius: 80px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin-right: 10px;
+}
+
+.menu ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: rgb(22, 22, 24);
+}
+
+/* Estilos para a seção de produtos */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product .price {
+    color: #666;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+}
+
+/* Estilos para telas menores (menu responsivo) 
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+
+    .menu.open {
+        transform: translateX(0);
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 25px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    .menu-icon::before {
+        top: 0;
+        transform-origin: top left;
+    }
+
+    .menu-icon::after {
+        bottom: 0;
+        transform-origin: bottom left;
+    }
+
+    .menu-icon.open::before {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+     
+}*/
+
+
+/* Estilos da div do produto */
+.produto-container {
+    background-color: #f5f5f5;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.produto-container img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+   
+}
+
+.produto-container h3 {
+    margin-bottom: 5px;
+}
+
+.produto-container p {
+    margin-bottom: 0;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+    padding: 5px;
+    position: relative;
+}
+
+nav ul li a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #666;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+/* Esconder a barra de hamburger em telas maiores */
+@media only screen and (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Estilos do checkbox personalizado */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilos do ícone "X" */
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos do checkbox personalizado personalizado */
+.menu-toggle {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #666;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:checked:before {
+    background-color: #666;
+}
+
+.menu-toggle:checked + .menu-icon span {
+    background-color: #666;
+}
+/* Estilos do menu responsivo */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    /* Estilos do hamburger menu */
+    .menu-icon {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #666;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-icon:hover span {
+        background-color: #000;
+    }
+
+    /* Estilos da animação do ícone "X" para as barras */
+    .menu-icon.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Exibir o menu quando o hamburger menu é clicado */
+    .menu-toggle:checked ~ nav ul {
+        display: block;
+    }
+}
