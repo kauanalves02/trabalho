@@ -1,0 +1,230 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Estilos específicos para as configurações */
+h3 {
+    margin-top: 20px;
+}
+
+/* Estilos para a seção "Alterar Senha" */
+#password,
+#confirm-password {
+    margin-bottom: 10px;
+}
+
+/* Estilos para a seção "Alterar Email" */
+
+/* Estilos para a seção "Entre em Contato" */
+
+/* Estilos da div do produto */
+.produto-container {
+    background-color: #f5f5f5;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.produto-container img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+   
+}
+
+.produto-container h3 {
+    margin-bottom: 5px;
+}
+
+.produto-container p {
+    margin-bottom: 0;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+    padding: 5px;
+    position: relative;
+}
+
+nav ul li a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #666;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+/* Esconder a barra de hamburger em telas maiores */
+@media only screen and (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Estilos do checkbox personalizado */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilos do ícone "X" */
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos do checkbox personalizado personalizado */
+.menu-toggle {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #666;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:checked:before {
+    background-color: #666;
+}
+
+.menu-toggle:checked + .menu-icon span {
+    background-color: #666;
+}
+/* Estilos do menu responsivo */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    /* Estilos do hamburger menu */
+    .menu-icon {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #666;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-icon:hover span {
+        background-color: #000;
+    }
+
+    /* Estilos da animação do ícone "X" para as barras */
+    .menu-icon.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Exibir o menu quando o hamburger menu é clicado */
+    .menu-toggle:checked ~ nav ul {
+        display: block;
+    }
+}
